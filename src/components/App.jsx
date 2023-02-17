@@ -18,8 +18,10 @@ function App() {
   }
 
   function deleteItem(id) {
-    return prevItems.filter((item, index) => {
-      return index !== id;
+    setItems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
     });
   }
 
