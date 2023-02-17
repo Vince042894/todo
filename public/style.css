@@ -46,3 +46,12 @@
   opacity: 0.8;
   cursor: pointer;
 }
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+}
+.addItem ul {
+  list-style-type: none;
+}
