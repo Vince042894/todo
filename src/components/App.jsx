@@ -5,39 +5,34 @@ function App() {
   const [items, setItems] = useState([]);
 
   function handleChange(event) {
-    const newInput = event.target.value;
-    setInputText(newInput);
+    const newValue = event.target.value;
+    setInputText(newValue);
   }
 
-  function AddItem() {
-    setItems((prevItem) => {
-      return [...prevItem, inputText];
+  function addItem() {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
     });
     setInputText("");
   }
 
   return (
     <div className="container">
-      <div className="form-container">
-        <h1>To-Do</h1>
-        <div className="input-data">
-          <input onChange={handleChange} value={inputText} type="text"></input>
-          <button>
-            <span onClick={AddItem}>Add</span>
-          </button>
-        </div>
-        <div className="addItem">
-          <ul>
-            {items.map((item) => {
-              return (
-                <div className="todoItem">
-                  <li>{item}</li>
-                  <button>Del</button>
-                </div>
-              );
-            })}
-          </ul>
-        </div>
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} type="text" value={inputText} />
+        <button onClick={addItem}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {items.map((todoItem) => (
+            <li>{todoItem}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
