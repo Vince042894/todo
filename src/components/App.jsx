@@ -29,7 +29,12 @@ function App() {
         <div className="addItem">
           <ul>
             {items.map((item) => {
-              return <li>{item}</li>;
+              return (
+                <div className="todoItem">
+                  <li>{item}</li>
+                  <button>Del</button>
+                </div>
+              );
             })}
           </ul>
         </div>
